@@ -20,7 +20,7 @@ weekly_aggregation AS (
             ,MODE() WITHIN GROUP (ORDER BY date_month) AS month
             ,MODE() WITHIN GROUP (ORDER BY month_name) AS month_name
             ,MODE() WITHIN GROUP (ORDER BY season) AS season
-        FROM daily_data
+        FROM weather_weekly
         GROUP BY airport_code, station_id, date_year, cw
 )
 SELECT * FROM weekly_aggregation
